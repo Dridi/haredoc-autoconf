@@ -1,0 +1,24 @@
+# autoconf
+autom4te.cache/
+build-aux/
+m4/
+
+Makefile.in
+aclocal.m4
+config.log
+config.status
+configure
+configure~
+libtool
+
+# automake
+.deps/
+.libs/
+
+.dirstamp
+Makefile
+
+# build
+/haredoc-*.tar.gz
+/haredoc
+*.[1-9]
