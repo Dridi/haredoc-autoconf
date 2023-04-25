@@ -1,16 +1,25 @@
 ACLOCAL_AMFLAGS = -I m4
 
-HAREENV = \
+HARE_ENV = \
 	HAREPATH=$(HAREPATH) \
 	HAREC=$(HAREC) \
-	QBE=$(QBE)
+	QBE=$(QBE) \
+	AR=$(AR) \
+	ARFLAGS=$(ARFLAGS) \
+	AS=$(AS) \
+	ASFLAGS=$(ASFLAGS) \
+	LD=$(LD) \
+	LDLINKFLAGS=$(LDLINKFLAGS)
+
+HARE_BUILD = env $(HARE_ENV) $(HARE) build -t $(host_cpu)
 
 # Hijack the libtool-based C build system instead of passing hare flags
 # via the environment. This composes better with per-program flags. We
 # can't build both Hare and C programs with the same makefile, but this
 # is still possible in the same automake project.
 CFLAGS = $(HAREFLAGS)
-CCLD = env $(HAREENV) $(HARE) build -t $(host_cpu)
+LDFLAGS =
+CCLD = $(HARE_BUILD)
 
 bin_PROGRAMS = haredoc
 

@@ -39,5 +39,12 @@ HA_ARG_VAR([HAREFLAGS], [Hare build flags], [])
 HA_ARG_VAR([HAREPATH],  [PATH for Hare modules],
 	['${prefix}/src/hare/stdlib:${prefix}/src/hare/third-party'])
 
+HA_ARG_VAR([AR],          [archiver])
+HA_ARG_VAR([ARFLAGS],     [archiver flags])
+HA_ARG_VAR([AS],          [assembler])
+HA_ARG_VAR([ASFLAGS],     [assembler flags])
+HA_ARG_VAR([LD],          [linker])
+HA_ARG_VAR([LDLINKFLAGS], [linker flags])
+
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
