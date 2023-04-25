@@ -37,7 +37,7 @@ HA_MISSING_PROG([SCDOC], [scdoc], [manual pages generator])
 
 HA_ARG_VAR([HAREFLAGS], [Hare build flags], [])
 HA_ARG_VAR([HAREPATH],  [PATH for Hare modules],
-	[$prefix/src/hare/stdlib:$prefix/src/hare/third-party])
+	['${prefix}/src/hare/stdlib:${prefix}/src/hare/third-party'])
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
