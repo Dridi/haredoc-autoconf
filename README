@@ -1,0 +1,36 @@
+Hare autotools example
+======================
+
+This is a proof of concept standalone haredoc project, taking the source code
+from the upstream hare repository [1] but building it with autotools. With few
+tweaks, it becomes possible to build a hare program and also get the goodies
+(or baddies) from autoconf and automake.
+
+Some autotools idiomatic features that work out of the box:
+
+- dist archives
+- cross compilation
+- influential variables
+- VPATH builds
+
+Testing for example is not supported because haredoc doesn't come with unit
+tests and Hare's model may not match automake's very well.
+
+To give it a try:
+
+    $ autoreconf -i
+    $ ./configure --prefix=/usr
+    $ make
+    $ ./haredoc -h
+
+Another example:
+
+    $ autoreconf -i
+    $ ./configure --prefix=/usr --host=riscv64-linux-gnu
+    $ make
+    $ file haredoc
+    haredoc: ELF 64-bit LSB executable, UCB RISC-V, [...]
+
+It appears to integrate well enough.
+
+[1] https://git.sr.ht/~sircmpwn/hare
